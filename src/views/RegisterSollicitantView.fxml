@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.RegisterSollicitantController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <Pane style="-fx-background: linear-gradient(to bottom, #2b8a9e, #5eb3d1); -fx-pref-width: 400; -fx-alignment: center;">
+            <VBox alignment="CENTER" style="-fx-padding: 50;">
+                <Label text="CV" style="-fx-font-size: 80px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </VBox>
+        </Pane>
+    </left>
+    
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="15" style="-fx-padding: 30; -fx-background-color: #f0f0f0;">
+            <Label text="Registreer als Sollicitant" style="-fx-font-size: 28px; -fx-text-fill: #666;"/>
+            
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+                <VBox spacing="10" style="-fx-max-width: 500; -fx-padding: 10;">
+                    <Label text="Naam" style="-fx-text-fill: #666;"/>
+                    <TextField fx:id="naamField" styleClass="input-field"/>
+                    
+                    <Label text="Email" style="-fx-text-fill: #666;"/>
+                    <TextField fx:id="emailField" styleClass="input-field"/>
+                    
+                    <Label text="Wachtwoord" style="-fx-text-fill: #666;"/>
+                    <PasswordField fx:id="passwordField" styleClass="input-field"/>
+                    
+                    <Label text="Herhaal Wachtwoord" style="-fx-text-fill: #666;"/>
+                    <PasswordField fx:id="confirmPasswordField" styleClass="input-field"/>
+                    
+                    <Label text="Vaardigheden" style="-fx-text-fill: #666;"/>
+                    <TextArea fx:id="vaardighedenArea" prefRowCount="2" styleClass="input-field"/>
+                    
+                    <Label text="Werkervaring" style="-fx-text-fill: #666;"/>
+                    <TextArea fx:id="werkervaringArea" prefRowCount="2" styleClass="input-field"/>
+                    
+                    <Button text="Registreer" onAction="#handleRegistreer" styleClass="primary-button" 
+                            style="-fx-min-width: 150; -fx-pref-height: 40;"/>
+                    
+                    <HBox alignment="CENTER" spacing="5">
+                        <Label text="Al een account?" style="-fx-text-fill: #666;"/>
+                        <Hyperlink text="log hier in" onAction="#handleLoginLink" style="-fx-text-fill: #2b8a9e;"/>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.LoginSollicitantController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <Pane style="-fx-background: linear-gradient(to bottom, #2b8a9e, #5eb3d1); -fx-pref-width: 500;"/>
+    </left>
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 50; -fx-background-color: #f0f0f0;">
+            <Label text="Log in" style="-fx-font-size: 32px; -fx-text-fill: #666;"/>
+            
+            <VBox spacing="10" style="-fx-max-width: 400;">
+                <Label text="Email" style="-fx-text-fill: #666;"/>
+                <TextField fx:id="emailField" promptText="Email" styleClass="input-field"/>
+                
+                <Label text="Wachtwoord" style="-fx-text-fill: #666;"/>
+                <PasswordField fx:id="passwordField" promptText="Wachtwoord" styleClass="input-field"/>
+            </VBox>
+            
+            <Button text="Log in" onAction="#handleLogin" styleClass="primary-button" 
+                    style="-fx-min-width: 150; -fx-pref-height: 40;"/>
+        </VBox>
+    </center>
+</BorderPane>

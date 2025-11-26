@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.BedrijfSelectieController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
+            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
+            <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox style="-fx-background-color: #f0f0f0; -fx-padding: 30;">
+            <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent;">
+                <GridPane hgap="20" vgap="20" alignment="CENTER" style="-fx-padding: 20;">
+                    <!-- Row 1 -->
+                    <Button text="Microsoft" onAction="#handleMicrosoft" styleClass="company-button" 
+                            GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Button text="McDonalds" onAction="#handleMcDonalds" styleClass="company-button" 
+                            GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Button text="ING" onAction="#handleING" styleClass="company-button" 
+                            GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Button text="Philips" onAction="#handlePhilips" styleClass="company-button" 
+                            GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                    <Button text="NVIDIA" onAction="#handleNVIDIA" styleClass="company-button" 
+                            GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                    
+                    <!-- Row 2 -->
+                    <Button text="Google" onAction="#handleGoogle" styleClass="company-button" 
+                            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Button text="Amazon" onAction="#handleAmazon" styleClass="company-button" 
+                            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Button text="Meta" onAction="#handleMeta" styleClass="company-button" 
+                            GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <Button text="Apple" onAction="#handleApple" styleClass="company-button" 
+                            GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    <Button text="Heineken" onAction="#handleHeineken" styleClass="company-button" 
+                            GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                </GridPane>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

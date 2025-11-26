@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.HomeController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 20;">
+            <!-- Iconen worden dynamisch toegevoegd na login -->
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox alignment="CENTER" spacing="30" style="-fx-background: linear-gradient(to bottom, #2b8a9e, #5eb3d1);">
+            <Label text="Solliciteren op basis van kwaliteiten, niet op achtergrond." 
+                   style="-fx-font-size: 24px; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 20;"/>
+            
+            <Label text="Bij ons draait het om jouw talenten en prestaties. Maak een profiel aan, wees je diplomaat, vaardigheden en ervaring toe, en solliciteer eenvoudig bij bedrijven die echt naar jouw kwaliteiten kijken." 
+                   style="-fx-font-size: 16px; -fx-text-fill: black; -fx-max-width: 600; -fx-wrap-text: true; -fx-text-alignment: center;"/>
+            
+            <Label text="Wij geloven in gelijke kansen voor iedereen – eerlijk, veilig en toekomstgericht." 
+                   style="-fx-font-size: 16px; -fx-text-fill: black; -fx-max-width: 600; -fx-wrap-text: true; -fx-text-alignment: center;"/>
+            
+            <HBox alignment="CENTER" spacing="20" style="-fx-padding: 30;">
+                <Button text="Registreer voor sollicitant" onAction="#handleRegistreerSollicitant" styleClass="primary-button"/>
+                <Button text="Registreer voor bedrijf" onAction="#handleRegistreerBedrijf" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

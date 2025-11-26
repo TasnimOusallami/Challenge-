@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.CVController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
+            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
+            <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <Pane style="-fx-background: linear-gradient(to bottom, #2b8a9e, #5eb3d1); -fx-pref-width: 450;"/>
+    </left>
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 30; -fx-background-color: #f0f0f0;">
+            <Label text="CV" style="-fx-font-size: 28px; -fx-text-fill: #666;"/>
+            
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+                <VBox spacing="15" style="-fx-padding: 10;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Vaardigheden ✏" style="-fx-text-fill: #666; -fx-font-weight: bold;"/>
+                    </HBox>
+                    <TextArea fx:id="vaardighedenArea" prefRowCount="3" styleClass="input-field"/>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Werkervaring ✏" style="-fx-text-fill: #666; -fx-font-weight: bold;"/>
+                    </HBox>
+                    <TextArea fx:id="werkervaringArea" prefRowCount="4" styleClass="input-field"/>
+                    
+                    <Separator/>
+                    
+                    <Label text="Diploma's uploaden" style="-fx-text-fill: #666; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                    <Button text="Upload Diploma" onAction="#handleUploadDiploma" styleClass="secondary-button"/>
+                    <ListView fx:id="diplomaListView" prefHeight="100" styleClass="diploma-list"/>
+                    
+                    <Button text="Verder naar bedrijven" onAction="#handleVerder" styleClass="primary-button" 
+                            style="-fx-min-width: 200; -fx-pref-height: 40; -fx-margin-top: 20;"/>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

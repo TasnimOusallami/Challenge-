@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.SollicitatieController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <Pane style="-fx-background: linear-gradient(to bottom, #2b8a9e, #5eb3d1); -fx-pref-width: 350;"/>
+    </left>
+    
+    <center>
+        <VBox spacing="20" style="-fx-padding: 40; -fx-background-color: #f0f0f0; -fx-alignment: center;">
+            <FlowPane fx:id="selectedVacaturesPane" hgap="10" vgap="10" alignment="CENTER"/>
+            
+            <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 15; -fx-background-radius: 5;">
+                <Label text="Vaardigheden:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="vaardighedenLabel" wrapText="true"/>
+            </VBox>
+            
+            <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 15; -fx-background-radius: 5;">
+                <Label text="Werkervaring:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="werkervaringLabel" wrapText="true"/>
+            </VBox>
+            
+            <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 15; -fx-background-radius: 5;">
+                <Label text="Neem contact op" style="-fx-font-weight: bold;"/>
+                <TextArea fx:id="berichtArea" promptText="Schrijf hier je bericht..." 
+                          prefRowCount="4" styleClass="input-field"/>
+            </VBox>
+            
+            <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 15; -fx-background-radius: 5;">
+                <Label text="Diploma's:" style="-fx-font-weight: bold;"/>
+                <ListView fx:id="diplomaListView" prefHeight="100" styleClass="diploma-list"/>
+            </VBox>
+            
+            <HBox spacing="20" alignment="CENTER" style="-fx-padding-top: 20;">
+                <Button text="Verstuur bericht" onAction="#handleVerstuur" styleClass="primary-button" 
+                        style="-fx-min-width: 150;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

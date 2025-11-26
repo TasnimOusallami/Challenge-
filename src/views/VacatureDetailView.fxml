@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.VacatureDetailController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
+            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
+            <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="25" style="-fx-padding: 50; -fx-background-color: #f0f0f0; -fx-alignment: center;">
+            <Label fx:id="functieNaamLabel" text="Functie Naam" 
+                   style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+            
+            <VBox spacing="15" style="-fx-max-width: 600;">
+                <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label fx:id="statusLabel" text="Status: Open" style="-fx-font-size: 16px;"/>
+                </VBox>
+                
+                <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label fx:id="adresLabel" text="Adres: " style="-fx-font-size: 16px;"/>
+                </VBox>
+                
+                <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label fx:id="werkurenLabel" text="Werkuren: " style="-fx-font-size: 16px;"/>
+                </VBox>
+                
+                <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label fx:id="dienstverbandLabel" text="Dienstverband: " style="-fx-font-size: 16px;"/>
+                </VBox>
+                
+                <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label fx:id="salarisLabel" text="Salarisindicatie: " style="-fx-font-size: 16px;"/>
+                </VBox>
+            </VBox>
+            
+            <Button text="Solliciteer" onAction="#handleSoliciteer" styleClass="primary-button" 
+                    style="-fx-min-width: 200; -fx-pref-height: 50; -fx-font-size: 18px;"/>
+        </VBox>
+    </center>
+</BorderPane>

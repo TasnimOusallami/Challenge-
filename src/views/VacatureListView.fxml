@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.VacatureListController" 
+            stylesheets="@../styles/style.css" prefWidth="1000" prefHeight="600">
+    
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="🏠" onAction="#handleHome" styleClass="icon-button"/>
+            <Button text="←" onAction="#handleBack" styleClass="icon-button"/>
+            <Button text="→" styleClass="icon-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
+            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
+            <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="20" style="-fx-padding: 40; -fx-background-color: #f0f0f0;">
+            <Label text="Beschikbare Vacatures" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            
+            <ListView fx:id="vacatureListView" style="-fx-background-color: transparent;" 
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>
