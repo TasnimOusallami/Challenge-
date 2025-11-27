@@ -1,5 +1,5 @@
 package controllers;
-
+import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,11 +28,29 @@ public class CVController {
     private ObservableList<String> diplomaList = FXCollections.observableArrayList();
     
     @FXML
+    private Label klantenIDLabel;
+    
+    @FXML
     public void initialize() {
         diplomaListView.setItems(diplomaList);
         
-        vaardighedenArea.setText("C#, C++, PHP, Java, JavaScript, HTML, CSS");
-        werkervaringArea.setText("2016-2020 Odido (IT)\n2020-2025 Microsoft (Developer)");
+        // Haal data op uit SessionManager
+        klantenIDLabel.setText("KlantenID: " + utils.SessionManager.getKlantenID());
+        vaardighedenArea.setText(utils.SessionManager.getVaardigheden());
+        werkervaringArea.setText(utils.SessionManager.getWerkervaring());
+    }
+    
+    @FXML
+    private void handleOpslaan(ActionEvent event) {
+        // Sla aangepaste gegevens op in SessionManager
+        utils.SessionManager.setVaardigheden(vaardighedenArea.getText());
+        utils.SessionManager.setWerkervaring(werkervaringArea.getText());
+        
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert.setTitle("Opgeslagen");
+        alert.setHeaderText(null);
+        alert.setContentText("Wijzigingen opgeslagen");
+        alert.showAndWait();
     }
     
     @FXML

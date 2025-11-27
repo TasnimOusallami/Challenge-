@@ -14,7 +14,6 @@
             <Button text="→" styleClass="icon-button"/>
             <Region HBox.hgrow="ALWAYS"/>
             <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
-            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
             <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
         </HBox>
     </top>
@@ -29,6 +28,9 @@
             
             <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
                 <VBox spacing="15">
+                    <Label fx:id="klantenIDLabel" text="KlantenID: " 
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    
                     <FlowPane fx:id="selectedVacaturesPane" hgap="10" vgap="10"/>
                     
                     <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 15; -fx-background-radius: 5;">

@@ -14,7 +14,6 @@
             <Button text="→" styleClass="icon-button"/>
             <Region HBox.hgrow="ALWAYS"/>
             <Button text="👤" onAction="#handleProfiel" styleClass="icon-button"/>
-            <Button text="💳" onAction="#handleNFCKaart" styleClass="icon-button"/>
             <Button text="Uitloggen" onAction="#handleLogout" styleClass="logout-button"/>
         </HBox>
     </top>

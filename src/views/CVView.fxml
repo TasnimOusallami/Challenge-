@@ -25,10 +25,14 @@
     
     <center>
         <VBox spacing="15" style="-fx-padding: 30; -fx-background-color: #f0f0f0;">
-            <Label text="CV" style="-fx-font-size: 28px; -fx-text-fill: #666;"/>
+            <Label text="Profiel" style="-fx-font-size: 28px; -fx-text-fill: #666;"/>
             
             <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
                 <VBox spacing="15" style="-fx-padding: 10;">
+                    <Label fx:id="klantenIDLabel" text="KlantenID: " style="-fx-text-fill: #333; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                    
+                    <Separator/>
+                    
                     <HBox spacing="10" alignment="CENTER_LEFT">
                         <Label text="Vaardigheden ✏" style="-fx-text-fill: #666; -fx-font-weight: bold;"/>
                     </HBox>
@@ -45,8 +49,12 @@
                     <Button text="Upload Diploma" onAction="#handleUploadDiploma" styleClass="secondary-button"/>
                     <ListView fx:id="diplomaListView" prefHeight="100" styleClass="diploma-list"/>
                     
-                    <Button text="Verder naar bedrijven" onAction="#handleVerder" styleClass="primary-button" 
-                            style="-fx-min-width: 200; -fx-pref-height: 40; -fx-margin-top: 20;"/>
+                    <HBox spacing="15" style="-fx-margin-top: 20;">
+                        <Button text="Opslaan" onAction="#handleOpslaan" styleClass="primary-button" 
+                                style="-fx-min-width: 150; -fx-pref-height: 40;"/>
+                        <Button text="Verder naar bedrijven" onAction="#handleVerder" styleClass="primary-button" 
+                                style="-fx-min-width: 200; -fx-pref-height: 40;"/>
+                    </HBox>
                 </VBox>
             </ScrollPane>
         </VBox>

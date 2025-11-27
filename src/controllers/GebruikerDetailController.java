@@ -36,21 +36,28 @@ public class GebruikerDetailController {
     private javafx.scene.control.TextArea berichtArea;
     
     @FXML
+    private Label klantenIDLabel;
+    
+    @FXML
     public void initialize() {
         Gebruiker gebruiker = AantalGebruikersController.getSelectedGebruiker();
         
         if (gebruiker != null) {
-            naamLabel.setText(gebruiker.getNaam());
+            klantenIDLabel.setText("KlantenID: " + gebruiker.getKlantenID());
+            vaardighedenLabel.setText(gebruiker.getVaardigheden());
+            werkervaringLabel.setText(gebruiker.getWerkervaring());
+        } else {
+            klantenIDLabel.setText("KlantenID: 12345678");
+            
+            Button btn1 = new Button("Software Engineer");
+            Button btn2 = new Button("Technical Support");
+            btn1.getStyleClass().add("selected-vacature-button");
+            btn2.getStyleClass().add("selected-vacature-button");
+            selectedVacaturesPane.getChildren().addAll(btn1, btn2);
+            
+            vaardighedenLabel.setText(gebruiker.getVaardigheden());
+            werkervaringLabel.setText(gebruiker.getWerkervaring());
         }
-        
-        Button btn1 = new Button("Software Engineer");
-        Button btn2 = new Button("Technical Support");
-        btn1.getStyleClass().add("selected-vacature-button");
-        btn2.getStyleClass().add("selected-vacature-button");
-        selectedVacaturesPane.getChildren().addAll(btn1, btn2);
-        
-        vaardighedenLabel.setText("C#, C++, PHP, Java, JavaScript, HTML, CSS");
-        werkervaringLabel.setText("2016-2020 Odido (IT)\n2020-2025 Microsoft (Developer)");
         
         ObservableList<String> diplomas = FXCollections.observableArrayList(
             "Bachelor Computer Science - Universiteit van Amsterdam",
@@ -84,12 +91,7 @@ public class GebruikerDetailController {
     
     @FXML
     private void handleProfiel(ActionEvent event) {
-        loadScene("/views/CVView.fxml", event);
-    }
-    
-    @FXML
-    private void handleNFCKaart(ActionEvent event) {
-        loadScene("/views/NFCKaartView.fxml", event);
+        loadScene("/views/BedrijfsProfielView.fxml", event);
     }
     
     @FXML

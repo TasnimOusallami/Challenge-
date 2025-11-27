@@ -30,7 +30,14 @@ public class RegisterBedrijfController {
     
     @FXML
     private void handleRegistreer(ActionEvent event) {
-        loadScene("/views/LoginBedrijfView.fxml", event);
+        // Sla bedrijfsnaam op
+        String bedrijfsNaam = bedrijfsnaamField.getText();
+        
+        // In productie: sla op in database
+        // Voor nu: direct inloggen
+        utils.SessionManager.loginBedrijf(bedrijfsNaam);
+        
+        loadScene("/views/VacatureOverzichtView.fxml", event);
     }
     
     @FXML

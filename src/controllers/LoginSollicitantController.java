@@ -24,7 +24,11 @@ public class LoginSollicitantController {
         String password = passwordField.getText();
         
         if (!email.isEmpty() && !password.isEmpty()) {
-            utils.SessionManager.login("sollicitant");
+            // Haal opgeslagen registratie data op (placeholder - in productie uit database)
+            String vaardigheden = "C#, C++, PHP, Java, JavaScript, HTML, CSS";
+            String werkervaring = "2016-2020 Odido (IT)\n2020-2025 Microsoft (Developer)";
+            
+            utils.SessionManager.loginSollicitant(vaardigheden, werkervaring);
             loadScene("/views/BedrijfSelectieView.fxml", event);
         }
     }

@@ -24,7 +24,10 @@ public class LoginBedrijfController {
         String password = passwordField.getText();
         
         if (!email.isEmpty() && !password.isEmpty()) {
-            utils.SessionManager.login("bedrijf");
+            // Haal bedrijfsnaam op (placeholder - in productie uit database)
+            String bedrijfsNaam = "Microsoft Corporation";
+            
+            utils.SessionManager.loginBedrijf(bedrijfsNaam);
             loadScene("/views/VacatureOverzichtView.fxml", event);
         }
     }

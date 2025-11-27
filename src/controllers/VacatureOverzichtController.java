@@ -85,12 +85,7 @@ public class VacatureOverzichtController {
     
     @FXML
     private void handleProfiel(ActionEvent event) {
-        loadScene("/views/CVView.fxml", event);
-    }
-    
-    @FXML
-    private void handleNFCKaart(ActionEvent event) {
-        loadScene("/views/NFCKaartView.fxml", event);
+        loadScene("/views/BedrijfsProfielView.fxml", event);
     }
     
     public static Vacature getSelectedVacature() {

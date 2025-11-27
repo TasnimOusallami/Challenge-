@@ -27,16 +27,16 @@ public class AantalGebruikersController {
     @FXML
     public void initialize() {
         ObservableList<Gebruiker> gebruikers = FXCollections.observableArrayList(
-            new Gebruiker("Mohammed El-Mansouri"),
-            new Gebruiker("Aisha Karim"),
-            new Gebruiker("Priya Natarajan"),
-            new Gebruiker("Chen Wei"),
-            new Gebruiker("Amara Okafor"),
-            new Gebruiker("Hiroshi Tanaka"),
-            new Gebruiker("Fatima Al-Mansouri"),
-            new Gebruiker("Mateo Rivera"),
-            new Gebruiker("Linh Nguyen"),
-            new Gebruiker("Zanele Dlamini")
+            new Gebruiker("12345678"),
+            new Gebruiker("23456789"),
+            new Gebruiker("34567890"),
+            new Gebruiker("45678901"),
+            new Gebruiker("56789012"),
+            new Gebruiker("67890123"),
+            new Gebruiker("78901234"),
+            new Gebruiker("89012345"),
+            new Gebruiker("90123456"),
+            new Gebruiker("01234567")
         );
         
         gebruikersListView.setItems(gebruikers);
@@ -70,12 +70,7 @@ public class AantalGebruikersController {
     
     @FXML
     private void handleProfiel(ActionEvent event) {
-        loadScene("/views/CVView.fxml", event);
-    }
-    
-    @FXML
-    private void handleNFCKaart(ActionEvent event) {
-        loadScene("/views/NFCKaartView.fxml", event);
+        loadScene("/views/BedrijfsProfielView.fxml", event);
     }
     
     public static Gebruiker getSelectedGebruiker() {
@@ -109,8 +104,8 @@ public class AantalGebruikersController {
                 hbox.setAlignment(Pos.CENTER_LEFT);
                 hbox.setStyle("-fx-padding: 10; -fx-background-color: #d3d3d3; -fx-background-radius: 5;");
                 
-                Label nameLabel = new Label(gebruiker.getNaam());
-                nameLabel.setStyle("-fx-font-size: 14px;");
+                Label idLabel = new Label("KlantenID: " + gebruiker.getKlantenID());
+                idLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
                 
                 HBox spacer = new HBox();
                 HBox.setHgrow(spacer, javafx.scene.layout.Priority.ALWAYS);
@@ -121,7 +116,7 @@ public class AantalGebruikersController {
                 Button deleteBtn = new Button("🗑");
                 deleteBtn.setStyle("-fx-background-color: transparent; -fx-font-size: 16px;");
                 
-                hbox.getChildren().addAll(nameLabel, spacer, editBtn, deleteBtn);
+                hbox.getChildren().addAll(idLabel, spacer, editBtn, deleteBtn);
                 setGraphic(hbox);
             }
         }

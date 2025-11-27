@@ -33,7 +33,15 @@ public class RegisterSollicitantController {
     
     @FXML
     private void handleRegistreer(ActionEvent event) {
-        loadScene("/views/LoginSollicitantView.fxml", event);
+        // Sla registratie data op voor later gebruik
+        String vaardigheden = vaardighedenArea.getText();
+        String werkervaring = werkervaringArea.getText();
+        
+        // In productie: sla op in database
+        // Voor nu: direct inloggen met deze gegevens
+        utils.SessionManager.loginSollicitant(vaardigheden, werkervaring);
+        
+        loadScene("/views/BedrijfSelectieView.fxml", event);
     }
     
     @FXML
